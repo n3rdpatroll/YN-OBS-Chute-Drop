@@ -1,0 +1,252 @@
+@import url(https://fonts.googleapis.com/css?family=Anton);
+
+body {
+  margin: 0;
+  padding: 0;
+  /* background: #333; */
+  background: transparent;
+}
+
+h4 {
+  padding: 0;
+  margin: 0;
+}
+.leader-board {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 24px;
+  padding: 0.5rem;
+}
+.scores {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-family: sans-serif;
+}
+.target {
+  position: fixed;
+  bottom: -340px;
+  width: 850px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.drop {
+  position: fixed;
+  width: 120px;
+  transform: rotate(15deg);
+  display: inline-block;
+  animation: sway 2s infinite alternate ease-in-out;
+}
+.drop.landed {
+  transform: rotate(0deg);
+  opacity: 0;
+  animation: fadeout 5s;
+}
+
+.drop.landed .chute {
+  transform-origin: bottom;
+  /* animation: shrink 1s ease-in-out;    
+    transform: scale (0); */
+}
+
+.drop .chute {
+  width: 120%;
+}
+
+.drop .username {
+  text-align: center;
+  color: black;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.drop .user-image {
+  display: block;
+  margin: 0 auto;
+  width: 80px;
+  height: 80px;
+  margin-top: -45px;
+}
+.drop .avatar {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.element {
+  animation: pulse 2s infinite;
+}
+
+.wind {
+  display: inline-block;
+  position: fixed;
+  bottom: 50%;
+  visibility: hidden;
+  animation: blowright 3s ease-in-out;
+}
+
+.wind .hostimg {
+  display: block;
+  width: 15%;
+  height: auto;
+  border-radius: 50%;
+  position: relative;
+  /* bottom: 10%; */
+  top: 250px;
+}
+.wind .cloud {
+  display: block;
+  width: 60%;
+  height: auto;
+  border-radius: 50%;
+  position: relative;
+  /* margin: -45px;  */
+}
+.bird {
+  display: block;
+  width: 200px;
+  height: auto;
+  border-radius: 20%;
+  position: relative;
+}
+
+.scoreWin {
+  display: block;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  position: relative;
+  text-align: center;
+  color: black;
+  font-size: 72px;
+  font-weight: bold;
+  top: 40px;
+  animation: blinker 2s linear infinite;
+}
+.displayHighScore {
+  font-size: 72pt;
+  font-family: "Luckiest Guy";
+  color: yellow;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 0px -6px 0 #212121, 0px -6px 0 #212121, 0px 6px 0 #212121,
+    0px 6px 0 #212121, -6px 0px 0 #212121, 6px 0px 0 #212121, -6px 0px 0 #212121,
+    6px 0px 0 #212121, -6px -6px 0 #212121, 6px -6px 0 #212121,
+    -6px 6px 0 #212121, 6px 6px 0 #212121, -6px 18px 0 #212121,
+    0px 18px 0 #212121, 6px 18px 0 #212121, 0 19px 1px rgba(0, 0, 0, 0.1),
+    0 0 6px rgba(0, 0, 0, 0.1), 0 6px 3px rgba(0, 0, 0, 0.3),
+    0 12px 6px rgba(0, 0, 0, 0.2), 0 18px 18px rgba(0, 0, 0, 0.25),
+    0 24px 24px rgba(0, 0, 0, 0.2), 0 36px 36px rgba(0, 0, 0, 0.15);
+}
+@keyframes sway {
+  0% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes shrink {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+    display: none;
+  }
+}
+@keyframes chuteopen {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+@keyframes blowright {
+  0% {
+    visibility: visible;
+    left: 100px;
+  }
+  100% {
+    left: 800px;
+    visibility: hidden;
+  }
+}
+@keyframes blowleft {
+  0% {
+    visibility: visible;
+    left: 1000px;
+  }
+  100% {
+    left: 300px;
+    visibility: hidden;
+  }
+}
+@keyframes scoreWin {
+  10% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes scoreWinOut {
+  10% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes flyaway {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    left: 1400px;
+    top: 400px;
+    transform: scale(0);
+    display: hidden;
+  }
+}
+@keyframes flyin {
+  0% {
+    transform: scale(0.2);
+    left: 40px;
+    top: 100px;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
