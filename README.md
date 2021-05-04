@@ -22,3 +22,5 @@ Download a zip of the project from this repository using the green 'Code' Button
     * allowWind - will allow mods/refs, Subs, and streamer to call wind to the game with windl (left) or windr (right)
     * displayHighScoreValue - set the score that will display the flashing banner at the top center (e.g. 95)
 
+Please post any thought questions or ideas to this repo and we can keep on improving the game.
+
